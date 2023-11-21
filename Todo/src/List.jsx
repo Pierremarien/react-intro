@@ -1,17 +1,30 @@
-import React from 'react';
-import Checkbox from './Checkbox';
+import React, { useState } from "react";
 
-const List = ({ todos }) => {
+function List() {
+  const initialTodos = ["To Do 1", "To Do 2"];
+  const [todos, setTodos] = useState(initialTodos);
+
+  const [checkedTodos, setCheckedTodos] = useState([]);
+
+  const handleCheckboxChange = (index) => {
+    const updatedCheckedTodos = [...checkedTodos];
+    updatedCheckedTodos[index] = !updatedCheckedTodos[index];
+    setCheckedTodos(updatedCheckedTodos);
+  };
   return (
     <ul>
       {todos.map((todo, index) => (
         <li key={index}>
-          <Checkbox />
+          <input
+            type="checkbox"
+            checked={checkedTodos[index] || false}
+            onChange={() => handleCheckboxChange(index)}
+          />
           {todo}
         </li>
       ))}
     </ul>
   );
-};
+}
 
 export default List;
