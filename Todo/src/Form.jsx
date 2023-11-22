@@ -1,14 +1,16 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
-function Form() {
+function Form({ onAddTodo }) {
   const inputRef = useRef();
 
-  function clickHandler() {
+  const clickHandler = () => {
     const inputElement = inputRef.current;
+    const newTodo = { task: inputElement.value, checked: false };
+    
+    onAddTodo(newTodo);
 
-    // Do something with inputElement...
-    console.log(inputElement.value);
-  }
+    inputElement.value = '';
+  };
   return (
     <div>
       <input ref={inputRef} type="text" placeholder="Enter your ToDo" />

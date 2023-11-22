@@ -1,26 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 
-function List() {
-  const initialTodos = ["To Do 1", "To Do 2"];
-  const [todos, setTodos] = useState(initialTodos);
-
-  const [checkedTodos, setCheckedTodos] = useState([]);
-
-  const handleCheckboxChange = (index) => {
-    const updatedCheckedTodos = [...checkedTodos];
-    updatedCheckedTodos[index] = !updatedCheckedTodos[index];
-    setCheckedTodos(updatedCheckedTodos);
-  };
+function List({ todos, handleCheckboxChange }) {
   return (
     <ul>
       {todos.map((todo, index) => (
         <li key={index}>
           <input
             type="checkbox"
-            checked={checkedTodos[index] || false}
+            checked={todo.checked}
             onChange={() => handleCheckboxChange(index)}
           />
-          {todo}
+          {todo.task}
         </li>
       ))}
     </ul>
