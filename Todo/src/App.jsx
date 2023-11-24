@@ -14,6 +14,8 @@ function App() {
     { task: "Sortir Bebou", checked: false },
     { task: "Manger au parc", checked: false },
   ];
+  
+  const [initialTodos, setInitialTodos] = useState(true)
 
   const [userTodos, setUserTodos] = useState(() => {
     const storedTodos =
@@ -32,6 +34,7 @@ function App() {
   }, [userTodos]);
 
   const handleAddTodo = (newTodo) => {
+    setInitialTodos(false);
     setUserTodos((prevUserTodos) => [...prevUserTodos, newTodo]);
   };
 
@@ -47,7 +50,7 @@ function App() {
       <SecondTitle />
       <DeleteButton onDeleteCheckedTodos={handleDeleteCheckedTodos} />
       <List
-        todos={userTodos.length > 0 ? userTodos : initialExampleTodos}
+        todos={initialTodos?initialExampleTodos:userTodos}
         handleCheckboxChange={handleCheckboxChange}
       />
     </div>

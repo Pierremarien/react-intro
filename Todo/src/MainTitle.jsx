@@ -3,7 +3,7 @@ import React from "react";
 function MainTitle() {
   return (
     <header>
-      <h1>To Do App</h1>
+      <h1>Do the thing</h1>
     </header>
   );
 }
