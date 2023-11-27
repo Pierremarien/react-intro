@@ -1,0 +1,13 @@
+@import "../../styles/variables/variables.scss";
+
+input[type="text"] {
+    border: none;
+    border-bottom: 2px solid $fourth-color;
+    background-color: $tertiary-color;
+    padding: 3px;
+    
+    &:focus {
+        outline: none;
+    }
+}
+

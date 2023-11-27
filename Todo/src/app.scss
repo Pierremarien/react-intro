@@ -1,0 +1,22 @@
+@import "styles/variables/variables.scss";
+
+.mainBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  height: 100%;
+  width: 100%;
+  padding: 100% 0;
+}
+.appBody {
+  background-color: $tertiary-color;
+  padding: 40px;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0px 0px 18px 9px #fffad7;
+  box-shadow: inset 0px 0px 18px 9px #fffad7;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

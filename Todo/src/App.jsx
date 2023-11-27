@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import List from "./List";
-import Form from "./Form";
-import MainTitle from "./MainTitle";
-import SecondTitle from "./SecondTitle";
-import DeleteButton from "./DeleteButton";
-import "./App.css";
+import List from "./components/List/List";
+import Form from "./components/Form/Form";
+import MainTitle from "./components/MainTitle/MainTitle";
+import SecondTitle from "./components/SecondTitle/SecondTitle";
+import DeleteButton from "./components/DeleteButton.jsx/DeleteButton";
+import "./app.scss";
 
 const LSKEY = "MyTodoApp";
 
@@ -44,15 +44,17 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="mainBody">
       <MainTitle />
-      <Form onAddTodo={handleAddTodo} />
-      <SecondTitle />
-      <DeleteButton onDeleteCheckedTodos={handleDeleteCheckedTodos} />
-      <List
-        todos={initialTodos?initialExampleTodos:userTodos}
-        handleCheckboxChange={handleCheckboxChange}
-      />
+      <div className="appBody">
+        <Form onAddTodo={handleAddTodo} />
+        <SecondTitle />
+        <DeleteButton onDeleteCheckedTodos={handleDeleteCheckedTodos} />
+        <List
+          todos={initialTodos?initialExampleTodos:userTodos}
+          handleCheckboxChange={handleCheckboxChange}
+        />
+      </div>
     </div>
   );
 }

@@ -1,0 +1,23 @@
+@import "styles/vendors/reset.scss";
+@import "styles/vendors/fonts.scss";
+@import "styles/variables/variables.scss";
+
+body {
+    font-family: $font;
+    background-color: $base-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 100vh;
+}
+
+h1 {
+    font-size: $title;
+    font-weight: $weight3;
+    padding: 10px;
+}
+
+h2 {
+    font-size: $small-title;
+    font-weight: $weight2;
+}

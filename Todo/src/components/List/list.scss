@@ -1,0 +1,12 @@
+@import "../../styles/variables/variables.scss";
+
+ul {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 200px;
+  overflow: hidden;
+  li {
+   text-overflow: ellipsis;
+  }
+}
